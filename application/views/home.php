@@ -83,7 +83,7 @@ echo $this->session->flashdata('error');
                 position:relative;
             ">
                 <img
-                    src="<?= site_url('/upload/post/'.$data['filename']); ?>"
+                    src="<?= site_url('/upload/post/'.$data['gambar']); ?>"
                     style="
                         width:100%;
                         height:100%;
@@ -91,18 +91,7 @@ echo $this->session->flashdata('error');
                     ">
 
                 <!-- DISKON LABEL -->
-                <div style="
-                    position:absolute;
-                    bottom:10px;
-                    left:10px;
-                    background:#4c6b22;
-                    color:#beee11;
-                    font-weight:bold;
-                    padding:6px 12px;
-                    font-size:20px;
-                ">
-                    -50%
-                </div>
+                
             </div>
 
             <!-- CONTENT -->
@@ -118,7 +107,7 @@ echo $this->session->flashdata('error');
                     margin-bottom:10px;
                     font-size:20px;
                 ">
-                    <?= $data['name']; ?>
+                    <?= $data['nama_game']; ?>
                 </h6>
 
                 <p style="
@@ -139,27 +128,42 @@ echo $this->session->flashdata('error');
                 ">
 
                     <div>
-                        <div style="
-                            color:#738895;
-                            text-decoration:line-through;
-                            font-size:13px;
-                        ">
-                            Rp 150.000
+                        <?php $harga_normal = $data['harga']?>
+                        <?php if ($data['discount'] > 0)
+                        {?>
+                            <?php 
+                                $diskon = $data['discount'];
+                                $harga_diskon = $harga_normal - (($harga_normal * $diskon) / 100); 
+                            ?>
+                            
+                            <div style="
+                            color:#738895; text-decoration:line-through; font-size:13px;">
+                            Rp. <?= number_format($harga_normal); ?>
                         </div>
-
                         <div style="
                             color:#beee11;
                             font-size:24px;
                             font-weight:bold;
                         ">
-                            Rp 75.000
+                            Rp. <?= number_format($harga_diskon) ?>
                         </div>
+
+                        <?php } else {?>
+                        
+                        <div style="
+                                color:#beee11;
+                                font-size:24px;
+                                font-weight:bold;
+                            ">
+                                Rp <?= number_format($harga_normal); ?>
+                            </div>
+                        <?php }?>
                     </div>
 
                 </div>
 
                 <!-- BUTTON -->
-                <a href="<?= site_url('welcome/index/'.$data['id']); ?>"
+                <a href="<?= site_url('welcome/index/'.$data['id_game']); ?>"
                    style="
                         display:block;
                         text-align:center;

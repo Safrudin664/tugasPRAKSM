@@ -59,8 +59,8 @@
                 <label style="color:#c7d5e0; font-weight:bold;">Title</label>
                 <input
                     type="text"
-                    name="name"
-                    id="name"
+                    name="nama_game"
+                    id="nama_game"
                     placeholder="Masukkan judul game"
                     style="
                         width:100%;
@@ -122,8 +122,8 @@
 
                     <input
                         type="number"
-                        name="price"
-                        id="price"
+                        name="harga"
+                        id="harga"
                         placeholder="Contoh: 75000"
                         style="
                             width:100%;

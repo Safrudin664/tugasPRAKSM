@@ -19,7 +19,7 @@
                     margin:0;
                     font-weight:700;
                 ">
-                    <?= $post->name; ?>
+                    <?= $post->nama_game; ?>
                 </h3>
 
                 <p style="
@@ -65,7 +65,7 @@
             ">
 
                 <img
-                    src="<?= site_url('upload/post/'.$post->filename); ?>"
+                    src="<?= site_url('upload/post/'.$post->gambar); ?>"
                     alt="Post Image"
                     style="
                         width:100%;
@@ -96,7 +96,7 @@
                 ">
                     Description
                 </h5>
-
+                    
                 <p style="
                     color:#c7d5e0;
                     line-height:1.8;
@@ -104,7 +104,13 @@
                 ">
                     <?= $post->description; ?>
                 </p>
-
+                <!-- HARGA-->
+                 <?php $harga_normal = $post->harga; ?>
+                <h5 style="
+                    color:#beee11;margin-top:0;font-weight:600;font-size:24px;font-weight:bold;
+                    ">
+                    RP. <?= number_format($harga_normal); ?>
+                </h5>
                 <hr style="
                     border:0;
                     border-top:1px solid #3b6e8c;
@@ -112,7 +118,7 @@
                 ">
 
                 <!-- ACTION BUTTON -->
-                <a href="<?= site_url('welcome/update/'.$post->id); ?>"
+                <a href="<?= site_url('welcome/update/'.$post->id_game); ?>"
                    style="
                     display:block;
                     text-align:center;
@@ -127,7 +133,7 @@
                     UPDATE CONTENT
                 </a>
 
-                <a href="<?= site_url('welcome/delete/'.$post->id); ?>"
+                <a href="<?= site_url('welcome/delete/'.$post->id_game); ?>"
                    onclick="return confirm('Yakin ingin menghapus data ini?')"
                    style="
                     display:block;

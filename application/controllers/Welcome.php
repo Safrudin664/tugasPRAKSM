@@ -15,8 +15,8 @@ class Welcome extends CI_Controller {
 		   =============================== */
 		$this->theme = array(
 			'app_name'      => 'MARKET GAME',
-			'primary'       => '#171a21',
-			'secondary'     => '#1b2838',
+			'primary'       => '#172120',
+			'secondary'     => '#1b3833',
 			'accent'        => '#66c0f4',
 			'text'          => '#c7d5e0',
 			'text_light'    => '#ffffff',
@@ -29,9 +29,9 @@ class Welcome extends CI_Controller {
 	/* ==================================================
 	   HOME PAGE
 	   ================================================== */
-	public function index($id = FALSE)
+	public function index($id_game = FALSE)
 	{
-		if ($id === FALSE) {
+		if ($id_game === FALSE) {
 
 			$data['theme']      = $this->theme;
 			$data['page_title'] = 'MARKET GAME';
@@ -45,7 +45,7 @@ class Welcome extends CI_Controller {
 
 			$data['theme']      = $this->theme;
 			$data['page_title'] = 'Detail Post';
-			$data['post']       = $this->model->read($id);
+			$data['post']       = $this->model->read($id_game);
 
 			$this->load->view('header', $data);
 			$this->load->view('post', $data);
@@ -59,7 +59,7 @@ class Welcome extends CI_Controller {
 	public function create()
 	{
 		$this->form_validation->set_rules(
-			'name',
+			'nama_game',
 			'Name',
 			'required|max_length[30]'
 		);
@@ -69,6 +69,13 @@ class Welcome extends CI_Controller {
 			'Description',
 			'required'
 		);
+
+		$this->form_validation->set_rules(
+			'harga',
+			'Harga',
+			'required'
+		);
+
 
 		if ($this->form_validation->run() == FALSE) {
 
@@ -81,13 +88,13 @@ class Welcome extends CI_Controller {
 
 		} else {
 
-			$id = uniqid('item', TRUE);
+			$id_game = uniqid('item', TRUE);
 
 			$config['upload_path']      = './upload/post/';
 			$config['allowed_types']    = 'jpg|jpeg|png';
 			$config['max_size']         = 100000;
 			$config['file_ext_tolower'] = TRUE;
-			$config['file_name']        = str_replace('.', '_', $id);
+			$config['file_name']        = str_replace('.', '_', $id_game);
 
 			$this->load->library('upload', $config);
 
@@ -102,9 +109,9 @@ class Welcome extends CI_Controller {
 
 			} else {
 
-				$filename = $this->upload->data('file_name');
+				$gambar = $this->upload->data('file_name');
 
-				$this->model->create($id, $filename);
+				$this->model->create($id_game, $gambar);
 
 				$this->session->set_flashdata(
 					'success',
@@ -119,10 +126,10 @@ class Welcome extends CI_Controller {
 	/* ==================================================
 	   UPDATE POST
 	   ================================================== */
-	public function update($id)
+	public function update($id_game)
 	{
 		$this->form_validation->set_rules(
-			'name',
+			'nama_game',
 			'Name',
 			'required|max_length[30]'
 		);
@@ -137,7 +144,7 @@ class Welcome extends CI_Controller {
 
 			$data['theme']      = $this->theme;
 			$data['page_title'] = 'Update Content';
-			$data['post']       = $this->model->read($id);
+			$data['game']       = $this->model->read($id_game);
 
 			$this->load->view('header', $data);
 			$this->load->view('update', $data);
@@ -147,7 +154,7 @@ class Welcome extends CI_Controller {
 
 			if (!empty($_FILES['image1']['name'])) {
 
-				$post = $this->model->read($id);
+				$post = $this->model->read($id_game);
 
 				$config['upload_path']      = './upload/post/';
 				$config['allowed_types']    = 'jpg|jpeg|png';
@@ -164,21 +171,21 @@ class Welcome extends CI_Controller {
 						$this->upload->display_errors()
 					);
 
-					redirect('welcome/update/'.$id);
+					redirect('welcome/update/'.$id_game);
 
 				} else {
 
 					if (
 						$post &&
-						!empty($post->filename) &&
-						file_exists('./upload/post/'.$post->filename)
+						!empty($post->gambar) &&
+						file_exists('./upload/post/'.$post->gambar)
 					) {
-						unlink('./upload/post/'.$post->filename);
+						unlink('./upload/post/'.$post->gambar);
 					}
 
-					$filename = $this->upload->data('file_name');
+					$gambar = $this->upload->data('file_name');
 
-					$this->model->update($id, $filename);
+					$this->model->update($id_game, $gambar);
 
 					$this->session->set_flashdata(
 						'success',
@@ -190,7 +197,7 @@ class Welcome extends CI_Controller {
 
 			} else {
 
-				$this->model->update($id);
+				$this->model->update($id_game);
 
 				$this->session->set_flashdata(
 					'success',
@@ -205,19 +212,19 @@ class Welcome extends CI_Controller {
 	/* ==================================================
 	   DELETE
 	   ================================================== */
-	public function delete($id)
+	public function delete($id_game)
 	{
-		$post = $this->model->read($id);
+		$post = $this->model->read($id_game);
 
 		if (
 			$post &&
-			!empty($post->filename) &&
-			file_exists('./upload/post/'.$post->filename)
+			!empty($post->gambar) &&
+			file_exists('./upload/post/'.$post->gambar)
 		) {
-			unlink('./upload/post/'.$post->filename);
+			unlink('./upload/post/'.$post->gambar);
 		}
 
-		$this->model->delete($id);
+		$this->model->delete($id_game);
 
 		$this->session->set_flashdata(
 			'success',

@@ -59,7 +59,7 @@
     box-shadow:0 0 18px rgba(0,0,0,.35);
 ">
 
-<form action="<?= site_url('welcome/update/'.$post->id); ?>"
+<form action="<?= site_url('welcome/update/'.$game->id_game); ?>"
       method="post"
       enctype="multipart/form-data">
 
@@ -79,8 +79,8 @@
 
                 <input
                     type="text"
-                    name="name"
-                    value="<?= $post->name; ?>"
+                    name="nama_game"
+                    value="<?= $game->nama_game; ?>"
                     style="
                         background:#1b2838;
                         border:1px solid #3b6e8c;
@@ -88,6 +88,7 @@
                         padding:12px;
                         border-radius:5px;
                         margin-top:8px;
+                        resize:none;
                     ">
             </div>
 
@@ -111,17 +112,62 @@
                         padding:12px;
                         border-radius:5px;
                         margin-top:8px;
-                        resize:none;
                     "
-                ><?= $post->description; ?></textarea>
+                ><?= $game->description; ?></textarea>
+            </div>
+
+            <!-- Harga -->
+            <div style="margin-bottom:25px;">
+                <label style="
+                    color:#c7d5e0;
+                    font-weight:bold;
+                ">
+                    Harga
+                </label>
+
+                <input
+                    type="number"
+                    name="harga"
+                    value="<?= $game->harga; ?>"
+                    style="
+                        background:#1b2838;
+                        border:1px solid #3b6e8c;
+                        color:white;
+                        padding:12px;
+                        border-radius:5px;
+                        margin-top:8px;
+                    ">
+            </div>
+
+            <!-- Diskon -->
+            <div style="margin-bottom:25px;">
+                <label style="
+                    color:#c7d5e0;
+                    font-weight:bold;
+                ">
+                    Diskon
+                </label>
+
+                <input
+                    type="number"
+                    name="discount"
+                    value="<?= $game->discount; ?>"
+                    min="0"
+                    max="100"
+                    style="
+                        background:#1b2838;
+                        border:1px solid #3b6e8c;
+                        color:white;
+                        padding:12px;
+                        border-radius:5px;
+                        margin-top:8px;
+                    ">
             </div>
 
         </div>
 
-
         <!-- RIGHT IMAGE -->
         <div class="col s12 m5">
-
             <label style="
                 color:#c7d5e0;
                 font-weight:bold;
@@ -135,17 +181,15 @@
                 border-radius:8px;
                 margin-top:8px;
             ">
-
                 <img
                     id="image"
-                    src="<?= site_url('upload/post/'.$post->filename); ?>"
+                    src="<?= site_url('upload/post/'.$game->gambar); ?>"
                     style="
                         width:100%;
                         height:260px;
                         object-fit:cover;
                         border-radius:6px;
                     ">
-
             </div>
 
 
