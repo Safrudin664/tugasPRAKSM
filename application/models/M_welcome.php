@@ -9,8 +9,7 @@ class M_welcome extends CI_Model {
             'nama_game' => $this->input->post('nama_game', TRUE),
             'description' => $this->input->post('description', TRUE),
             'harga' => $this->input->post('harga', TRUE),
-			'gambar' => $filename,
-			'tag' => $tag
+			'gambar' => $filename
         ];
 
         $this->db->insert('game', $data);
