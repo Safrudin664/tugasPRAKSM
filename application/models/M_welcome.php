@@ -15,31 +15,39 @@ class M_welcome extends CI_Model {
     }
 
     
-public function read($id = false)
-{
-	if ($id === false) {
-		return $this->db->get('post')->result_array();
-	} else {
-		$query = $this->db->get_where('post', array('id' => $id));
-		return $query->row();
-	}
-}
-
-
-public function update($id, $filename = null){
-	$data = [
-		'name' => $this->input->post('name', TRUE),
-		'description' => $this->input->post('description', TRUE),
-	];
-
-	if ($filename !== null) {
-		$data['filename'] = $filename;
+	public function read($id = false)
+	{
+		if ($id === false) {
+			return $this->db->get('post')->result_array();
+		} else {
+			$query = $this->db->get_where('post', array('id' => $id));
+			return $query->row();
+		}
 	}
 
-	$this->db->where('id', $id);
-	$this->db->update('post', $data);
-}
 
+	public function update($id, $filename = null){
+		$data = [
+			'name' => $this->input->post('name', TRUE),
+			'description' => $this->input->post('description', TRUE),
+		];
+
+		if ($filename !== null) {
+			$data['filename'] = $filename;
+		}
+
+		$this->db->where('id', $id);
+		$this->db->update('post', $data);
+	}
+
+	public function delete($id){
+		$this->db->where('id', $id);
+		$this->db->delete('post');
+	}
+
+	public function deleteAll(){
+		$this->db->empty_table('post');
+	}
 
 
 
