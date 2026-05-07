@@ -19,7 +19,7 @@ echo $this->session->flashdata('error');
                 margin-top:0;
                 font-weight:700;
             ">
-                STEAM MULTIMEDIA STORE
+                MARKET GAME
             </h3>
 
             <p style="
@@ -27,34 +27,18 @@ echo $this->session->flashdata('error');
                 line-height:1.8;
                 font-size:16px;
             ">
-                Jelajahi koleksi konten multimedia terbaik.
-                Upload gambar, lihat galeri modern, dan nikmati
-                tampilan seperti Steam Store.
+                Jelajahi koleksi game terbaik dan termurah di Market Game, tempat terbaik untuk mendapatkan berbagai game populer dengan harga hemat, proses cepat, aman, dan terpercaya untuk semua gamer.
             </p>
-
-            <a href="<?= site_url('welcome/create'); ?>"
-               style="
-                display:inline-block;
-                margin-top:15px;
-                background:#66c0f4;
-                color:#0b1b2b;
-                padding:12px 24px;
-                border-radius:4px;
-                font-weight:bold;
-                text-decoration:none;
-               ">
-                Upload Sekarang
-            </a>
         </div>
 
         <div class="col s12 m5 center-align">
             <img
-                src="https://cdn.cloudflare.steamstatic.com/store/home/store_home_share.jpg"
+                src="img/logo.png"
                 style="
                     width:100%;
-                    max-height:220px;
-                    object-fit:cover;
-                    border-radius:6px;
+                    max-height:300px;
+                    object-fit:contain;
+                    border-radius:2px;
                 ">
         </div>
 
@@ -63,16 +47,16 @@ echo $this->session->flashdata('error');
 
 
 <!-- SECTION TITLE -->
-<h5 style="
+<h4 style="
     color:#ffffff;
     margin-bottom:25px;
-    font-weight:600;
+    font-weight:700;
 ">
-    Konten Populer
-</h5>
+    Game Populer
+</h4>
 
 
-<!-- GRID CONTENT -->
+<!-- STEAM STYLE GRID -->
 <div class="row">
 
 <?php foreach ($home_post as $data): ?>
@@ -80,18 +64,23 @@ echo $this->session->flashdata('error');
     <div class="col s12 m6 l4">
 
         <div style="
-            background:#16202d;
-            border-radius:8px;
+            background:linear-gradient(to bottom,#1b2838,#171a21);
+            border-radius:4px;
             overflow:hidden;
             margin-bottom:25px;
-            box-shadow:0 0 14px rgba(0,0,0,.35);
+            box-shadow:0 0 15px rgba(0,0,0,.45);
             transition:.3s;
-        ">
+            border:1px solid rgba(255,255,255,.05);
+        "
+        onmouseover="this.style.transform='scale(1.02)'"
+        onmouseout="this.style.transform='scale(1)'"
+        >
 
             <!-- IMAGE -->
             <div style="
-                height:220px;
+                height:190px;
                 overflow:hidden;
+                position:relative;
             ">
                 <img
                     src="<?= site_url('/upload/post/'.$data['filename']); ?>"
@@ -100,38 +89,87 @@ echo $this->session->flashdata('error');
                         height:100%;
                         object-fit:cover;
                     ">
+
+                <!-- DISKON LABEL -->
+                <div style="
+                    position:absolute;
+                    bottom:10px;
+                    left:10px;
+                    background:#4c6b22;
+                    color:#beee11;
+                    font-weight:bold;
+                    padding:6px 12px;
+                    font-size:20px;
+                ">
+                    -50%
+                </div>
             </div>
 
             <!-- CONTENT -->
-            <div style="padding:18px;">
+            <div style="
+                padding:16px;
+                background:linear-gradient(to right,#1b2838,#2a475e);
+            ">
 
                 <h6 style="
                     color:#ffffff;
                     font-weight:600;
                     margin-top:0;
+                    margin-bottom:10px;
+                    font-size:20px;
                 ">
                     <?= $data['name']; ?>
                 </h6>
 
                 <p style="
-                    color:#8f98a0;
-                    min-height:48px;
+                    color:#acb2b8;
+                    font-size:14px;
+                    min-height:45px;
                     margin-bottom:18px;
                 ">
                     <?= $data['description']; ?>
                 </p>
+
+                <!-- PRICE AREA -->
+                <div style="
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    margin-bottom:15px;
+                ">
+
+                    <div>
+                        <div style="
+                            color:#738895;
+                            text-decoration:line-through;
+                            font-size:13px;
+                        ">
+                            Rp 150.000
+                        </div>
+
+                        <div style="
+                            color:#beee11;
+                            font-size:24px;
+                            font-weight:bold;
+                        ">
+                            Rp 75.000
+                        </div>
+                    </div>
+
+                </div>
 
                 <!-- BUTTON -->
                 <a href="<?= site_url('welcome/index/'.$data['id']); ?>"
                    style="
                         display:block;
                         text-align:center;
-                        background:#66c0f4;
-                        color:#0b1b2b;
-                        padding:10px;
-                        border-radius:4px;
+                        background:linear-gradient(to right,#66c0f4,#417a9b);
+                        color:#ffffff;
+                        padding:12px;
+                        border-radius:3px;
                         font-weight:bold;
                         text-decoration:none;
+                        letter-spacing:.5px;
                    ">
                     VIEW DETAIL
                 </a>
@@ -145,4 +183,3 @@ echo $this->session->flashdata('error');
 <?php endforeach; ?>
 
 </div>
-

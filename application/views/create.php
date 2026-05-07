@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
-<!-- STEAM STYLE CREATE PAGE -->
+
 
 <div class="container" style="max-width:900px; margin-top:40px; margin-bottom:60px;">
 
@@ -61,11 +61,11 @@
                     type="text"
                     name="name"
                     id="name"
-                    placeholder="Masukkan judul konten"
+                    placeholder="Masukkan judul game"
                     style="
                         width:100%;
                         height:45px;
-                        padding:5px 1px;
+                        padding:5px 12px;
                         background:#1b2838;
                         border:1px solid #3b6e8c;
                         color:white;
@@ -82,7 +82,7 @@
                     name="description"
                     id="description"
                     rows="5"
-                    placeholder="Masukkan deskripsi..."
+                    placeholder="Masukkan deskripsi game..."
                     style="
                         width:100%;
                         padding:12px 15px;
@@ -94,6 +94,57 @@
                         resize:none;
                     "
                 ></textarea>
+            </div>
+
+            <!-- PRICE -->
+            <div style="margin-bottom:25px;">
+                <label style="color:#c7d5e0; font-weight:bold;">Harga Game (Rupiah)</label>
+
+                <div style="
+                    display:flex;
+                    align-items:center;
+                    margin-top:8px;
+                    background:#1b2838;
+                    border:1px solid #3b6e8c;
+                    border-radius:5px;
+                    overflow:hidden;
+                ">
+
+                    <div style="
+                        background:#16202d;
+                        color:#66c0f4;
+                        padding:12px 18px;
+                        font-weight:bold;
+                        border-right:1px solid #3b6e8c;
+                    ">
+                        Rp
+                    </div>
+
+                    <input
+                        type="number"
+                        name="price"
+                        id="price"
+                        placeholder="Contoh: 75000"
+                        style="
+                            width:100%;
+                            height:45px;
+                            padding:5px 15px;
+                            background:#1b2838;
+                            border:none;
+                            color:white;
+                            outline:none;
+                        "
+                    >
+
+                </div>
+
+                <p style="
+                    color:#8f98a0;
+                    margin-top:8px;
+                    font-size:13px;
+                ">
+                    Masukkan harga tanpa titik atau koma
+                </p>
             </div>
 
             <!-- FILE -->
@@ -114,6 +165,7 @@
                         accept=".jpg,.png,.jpeg"
                         style="color:white;"
                     >
+
                     <p style="color:#8f98a0; margin-top:10px;">
                         Format: JPG / PNG / JPEG
                     </p>

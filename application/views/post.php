@@ -166,10 +166,7 @@
             color:#8f98a0;
             line-height:1.8;
         ">
-            Halaman ini menampilkan detail konten multimedia
-            dengan tampilan modern ala Steam Store.
-            User dapat melihat gambar, membaca deskripsi,
-            mengedit, maupun menghapus data.
+            Halaman ini di gunakan untuk update dan delete konten multimedia yang sudah di buat.
         </p>
 
     </div>

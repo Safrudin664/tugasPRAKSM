@@ -14,7 +14,7 @@ class Welcome extends CI_Controller {
 		   STEAM UI THEME DATA
 		   =============================== */
 		$this->theme = array(
-			'app_name'      => 'Steam Multimedia',
+			'app_name'      => 'MARKET GAME',
 			'primary'       => '#171a21',
 			'secondary'     => '#1b2838',
 			'accent'        => '#66c0f4',
@@ -34,7 +34,7 @@ class Welcome extends CI_Controller {
 		if ($id === FALSE) {
 
 			$data['theme']      = $this->theme;
-			$data['page_title'] = 'Steam Multimedia';
+			$data['page_title'] = 'MARKET GAME';
 			$data['home_post']  = $this->model->read();
 
 			$this->load->view('header', $data);
