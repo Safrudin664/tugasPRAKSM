@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
     <script src="<?= site_url('asset/js/materialize.min.js'); ?>"></script>
 
     <!-- NAVBAR -->
@@ -25,20 +26,40 @@
                 <a href="<?= site_url(); ?>" class="brand-logo">
                     Market Game
                 </a> 
+                <!-- RIGHT MENU -->
+                <div style="display:flex; align-items:center;">
 
+                    <!-- SEARCH -->
+                    <form 
+                        action="<?= site_url('welcome/search'); ?>" 
+                        method="get"
+                        class="search-box"
+                    >
 
-                <!-- DESKTOP MENU -->
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="<?= base_url(); ?>">TOKO</a></li>
-                    <li><a href="<?= site_url('welcome/kelompok'); ?>">KELOMPOK</a></li>
-                    <li><a href="<?= site_url('welcome/create'); ?>">CREATE</a></li>
-                </ul>
+                        <input 
+                            type="text"
+                            name="keyword"
+                            placeholder="Cari game..."
+                        >
+
+                        <button type="submit">
+                            <i class="material-icons">search</i>
+                        </button>
+
+                    </form>
+
+                    <!-- DESKTOP MENU -->
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="<?= base_url(); ?>">TOKO</a></li>
+                        <li><a href="<?= site_url('welcome/kelompok'); ?>">KELOMPOK</a></li>
+                        <li><a href="<?= site_url('welcome/create'); ?>">CREATE</a></li>
+                    </ul>
+
+                </div>
 
             </div>
         </nav>
     </div>
-
-    
 
 <!-- CONTENT -->
 <main class="container">

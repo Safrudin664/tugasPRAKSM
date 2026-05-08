@@ -57,6 +57,40 @@ nav{
     }
 
     /* home.php css */
+
+    /* SEARCH */
+    .search-box{
+        display:flex;
+        align-items:center;
+        margin-right:20px;
+    }
+
+    .search-box input{
+        width:220px !important;
+        height:38px !important;
+        background:#316282 !important;
+        border:none !important;
+        outline:none !important;
+        color:white !important;
+        padding:0 12px !important;
+        border-radius:4px 0 0 4px !important;
+        margin:0 !important;
+        box-sizing:border-box;
+    }
+
+    .search-box button{
+        height:38px;
+        border:none;
+        background:#66c0f4;
+        color:white;
+        padding:0 14px;
+        border-radius:0 4px 4px 0;
+        cursor:pointer;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
     .intro {
         background:linear-gradient(to right,#0f1923,#1b2838,#22384a);
         border-radius:8px;

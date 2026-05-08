@@ -19,7 +19,7 @@
                         margin-top:0;
                         font-weight:600;
                     ">
-                        Steam Multimedia
+                        MARKET GAME
                     </h4>
 
                     <p style="
@@ -27,8 +27,8 @@
                         line-height:1.8;
                         margin-top:15px;
                     ">
-                        Platform multimedia modern berbasis CodeIgniter
-                        dengan tampilan elegan seperti Steam Store.
+                        Platform game berbasis CodeIgniter
+                        dengan tampilan elegan.
                     </p>
                 </div>
 
@@ -40,21 +40,21 @@
                         <li>
                             <a href="<?= base_url(); ?>"
                                style="color:#66c0f4; text-decoration:none;">
-                                Home
+                                Toko
                             </a>
                         </li>
 
                         <li>
                             <a href="<?= site_url('welcome/create'); ?>"
                                style="color:#66c0f4; text-decoration:none;">
-                                Upload Content
+                                Upload Game
                             </a>
                         </li>
 
                         <li>
                             <a href="#"
                                style="color:#66c0f4; text-decoration:none;">
-                                Gallery
+                                Kelompok
                             </a>
                         </li>
                     </ul>
@@ -76,7 +76,7 @@
                     letter-spacing:0.5px;
                 ">
                     © <?= date("Y"); ?> Gunadarma University —
-                    Steam Multimedia Edition.
+                    MARKET GAME.
                     All rights reserved.
                 </small>
 
