@@ -2,33 +2,21 @@
     </main>
 
     <!-- STEAM STYLE FOOTER -->
-    <footer style="
-        background: linear-gradient(to bottom,#171a21,#0f141b);
-        border-top: 3px solid #66c0f4;
-        margin-top:50px;
-        color:#c7d5e0;
-    ">
+    <footer>
         <div class="container" style="padding:40px 20px;">
 
             <div class="row" style="margin-bottom:0;">
 
                 <!-- LEFT -->
                 <div class="col s12 m6">
-                    <h4 style="
-                        color:#ffffff;
-                        margin-top:0;
-                        font-weight:600;
-                    ">
+                    <h4 class="font-big">
                         MARKET GAME
                     </h4>
 
                     <p style="
-                        color:#8f98a0;
-                        line-height:1.8;
-                        margin-top:15px;
+                        
                     ">
-                        Platform game berbasis CodeIgniter
-                        dengan tampilan elegan.
+                        Platform game berbasis CodeIgniterdengan tampilan elegan.
                     </p>
                 </div>
 

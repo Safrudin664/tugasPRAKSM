@@ -53,69 +53,30 @@
 
     <!-- CONTENT AREA -->
     <div class="row">
-
         <!-- IMAGE LEFT -->
         <div class="col s12 m7">
-
-            <div style="
-                background:#16202d;
-                border-radius:8px;
-                overflow:hidden;
-                box-shadow:0 0 18px rgba(0,0,0,.35);
-            ">
-
+            <div class="image-bg">
                 <img
                     src="<?= site_url('upload/post/'.$post->gambar); ?>"
                     alt="Post Image"
-                    style="
-                        width:100%;
-                        height:420px;
-                        object-fit:cover;
-                    "
-                >
-
+                    class="image-game">
             </div>
-
         </div>
-
 
         <!-- RIGHT INFO -->
         <div class="col s12 m5">
-
-            <div style="
-                background:#2a475e;
-                border-radius:8px;
-                padding:25px;
-                box-shadow:0 0 18px rgba(0,0,0,.35);
-            ">
-
-                <h5 style="
-                    color:#ffffff;
-                    margin-top:0;
-                    font-weight:600;
-                ">
-                    Description
-                </h5>
-                    
-                <p style="
-                    color:#c7d5e0;
-                    line-height:1.8;
-                    min-height:150px;
-                ">
+            <div class="desc-right">
+                <h6> Description</h6>
+                <p class="desc">
                     <?= $post->description; ?>
                 </p>
                 <!-- HARGA-->
                  <?php $harga_normal = $post->harga; ?>
-                <h5 style="
-                    color:#beee11;margin-top:0;font-weight:600;font-size:24px;font-weight:bold;
-                    ">
+                <h5 class="harga-game">
                     RP. <?= number_format($harga_normal); ?>
                 </h5>
-                <hr style="
-                    border:0;
-                    border-top:1px solid #3b6e8c;
-                    margin:20px 0;
-                ">
+                <hr style="border:0;border-top:1px solid #3b6e8c;
+                    margin:20px 0;">
 
                 <!-- ACTION BUTTON -->
                 <a href="<?= site_url('welcome/update/'.$post->id_game); ?>"

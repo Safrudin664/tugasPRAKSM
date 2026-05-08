@@ -56,8 +56,7 @@ class Welcome extends CI_Controller {
 	/* ==================================================
 	   SEARCH GAME
 	   ================================================== */
-	public function search()
-{
+	public function search(){
     $keyword = $this->input->get('keyword');
 
     $data['theme']      = $this->theme;

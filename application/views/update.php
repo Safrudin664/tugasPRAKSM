@@ -60,22 +60,15 @@
 ">
 
 <form action="<?= site_url('welcome/update/'.$game->id_game); ?>"
-      method="post"
-      enctype="multipart/form-data">
+      method="post" enctype="multipart/form-data">
 
     <div class="row">
-
         <!-- LEFT FORM -->
         <div class="col s12 m7">
-
             <!-- TITLE -->
             <div style="margin-bottom:25px;">
-                <label style="
-                    color:#c7d5e0;
-                    font-weight:bold;
-                ">
-                    Item Name
-                </label>
+                <label style="color:#c7d5e0;font-weight:bold;">
+                    Item Name </label>
 
                 <input
                     type="text"
@@ -88,46 +81,26 @@
                         padding:12px;
                         border-radius:5px;
                         margin-top:8px;
-                        resize:none;
                     ">
             </div>
 
-
             <!-- DESCRIPTION -->
             <div style="margin-bottom:25px;">
-                <label style="
-                    color:#c7d5e0;
-                    font-weight:bold;
-                ">
-                    Description
-                </label>
+                <label style=" color:#c7d5e0;
+                    font-weight:bold;">
+                    Description </label>
 
                 <textarea
-                    name="description"
-                    rows="8"
-                    style="
-                        background:#1b2838;
-                        border:1px solid #3b6e8c;
-                        color:white;
-                        padding:12px;
-                        border-radius:5px;
-                        margin-top:8px;
-                    "
-                ><?= $game->description; ?></textarea>
+                    name="description" rows="8"
+                    class="input-desc"><?= $game->description; ?></textarea>
             </div>
 
             <!-- Harga -->
             <div style="margin-bottom:25px;">
-                <label style="
-                    color:#c7d5e0;
-                    font-weight:bold;
-                ">
-                    Harga
-                </label>
+                <label style="color:#c7d5e0; font-weight:bold;">
+                    Harga </label>
 
-                <input
-                    type="number"
-                    name="harga"
+                <input type="number" name="harga"
                     value="<?= $game->harga; ?>"
                     style="
                         background:#1b2838;
@@ -141,39 +114,26 @@
 
             <!-- Diskon -->
             <div style="margin-bottom:25px;">
-                <label style="
-                    color:#c7d5e0;
-                    font-weight:bold;
-                ">
-                    Diskon
-                </label>
+                <label style="color:#c7d5e0; font-weight:bold; ">
+                    Diskon </label>
 
                 <input
-                    type="number"
-                    name="discount"
+                    type="number" name="discount"
                     value="<?= $game->discount; ?>"
-                    min="0"
-                    max="100"
+                    min="0"max="100"
                     style="
                         background:#1b2838;
                         border:1px solid #3b6e8c;
-                        color:white;
-                        padding:12px;
+                        color:white; padding:12px;
                         border-radius:5px;
-                        margin-top:8px;
-                    ">
+                        margin-top:8px; ">
             </div>
-
         </div>
 
         <!-- RIGHT IMAGE -->
         <div class="col s12 m5">
-            <label style="
-                color:#c7d5e0;
-                font-weight:bold;
-            ">
-                Preview Image
-            </label>
+            <label style="color:#c7d5e0;font-weight:bold;">
+                Preview Image </label>
 
             <div style="
                 background:#1b2838;
@@ -181,74 +141,33 @@
                 border-radius:8px;
                 margin-top:8px;
             ">
-                <img
-                    id="image"
+                <img id="image"
                     src="<?= site_url('upload/post/'.$game->gambar); ?>"
-                    style="
-                        width:100%;
-                        height:260px;
-                        object-fit:cover;
-                        border-radius:6px;
-                    ">
+                    class="img-update">
             </div>
-
-
             <!-- FILE -->
             <div style="margin-top:20px;">
-
-                <label style="
-                    color:#c7d5e0;
-                    font-weight:bold;
-                ">
-                    Change Image
-                </label>
+                <label style="color:#c7d5e0;font-weight:bold;">
+                    Change Image</label>
 
                 <input
                     type="file"
                     name="image1"
                     id="file"
                     onchange="thumbnail();"
-                    style="
-                        margin-top:10px;
-                        color:white;
-                    ">
+                    style="margin-top:10px;color:white;">
             </div>
-
         </div>
-
     </div>
-
 
     <!-- BUTTON -->
     <div style="margin-top:25px;">
-
-        <button type="submit"
-                style="
-                    background:#66c0f4;
-                    color:#0b1b2b;
-                    border:none;
-                    padding:12px 28px;
-                    border-radius:4px;
-                    font-weight:bold;
-                    cursor:pointer;
-                    margin-right:10px;
-                ">
-            SAVE UPDATE
-        </button>
+        <button type="submit" class="btn-update">
+            SAVE UPDATE </button>
 
         <a href="<?= base_url(); ?>"
-           style="
-                background:#2a475e;
-                color:#ffffff;
-                padding:12px 28px;
-                border-radius:4px;
-                text-decoration:none;
-           ">
-            CANCEL
-        </a>
-
+           class="btn-back"> CANCEL </a>
     </div>
-
 </form>
 
 </div>

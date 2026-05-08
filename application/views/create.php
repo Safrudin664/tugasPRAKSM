@@ -53,95 +53,40 @@
     ">
 
         <form action="<?= site_url('welcome/create'); ?>" method="post" enctype="multipart/form-data">
-
             <!-- NAME -->
             <div style="margin-bottom:25px;">
                 <label style="color:#c7d5e0; font-weight:bold;">Title</label>
-                <input
-                    type="text"
-                    name="nama_game"
-                    id="nama_game"
-                    placeholder="Masukkan judul game"
-                    style="
-                        width:100%;
-                        height:45px;
-                        padding:5px 12px;
-                        background:#1b2838;
-                        border:1px solid #3b6e8c;
-                        color:white;
-                        border-radius:5px;
-                        margin-top:8px;
-                    "
-                >
+                <input type="text" class="input-nama" name="nama_game"
+                    id="nama_game" placeholder="Masukkan judul game"
+                    >
             </div>
 
             <!-- DESCRIPTION -->
             <div style="margin-bottom:25px;">
                 <label style="color:#c7d5e0; font-weight:bold;">Description</label>
                 <textarea
-                    name="description"
-                    id="description"
-                    rows="5"
+                    name="description" id="description"
+                    rows="5" 
                     placeholder="Masukkan deskripsi game..."
-                    style="
-                        width:100%;
-                        padding:12px 15px;
-                        background:#1b2838;
-                        border:1px solid #3b6e8c;
-                        color:white;
-                        border-radius:5px;
-                        margin-top:8px;
-                        resize:none;
-                    "
-                ></textarea>
+                    class="input-desc">
+                </textarea>
             </div>
 
             <!-- PRICE -->
             <div style="margin-bottom:25px;">
                 <label style="color:#c7d5e0; font-weight:bold;">Harga Game (Rupiah)</label>
 
-                <div style="
-                    display:flex;
-                    align-items:center;
-                    margin-top:8px;
-                    background:#1b2838;
-                    border:1px solid #3b6e8c;
-                    border-radius:5px;
-                    overflow:hidden;
-                ">
-
-                    <div style="
-                        background:#16202d;
-                        color:#66c0f4;
-                        padding:12px 18px;
-                        font-weight:bold;
-                        border-right:1px solid #3b6e8c;
-                    ">
+                <div class="input-price1">
+                    <div class="input-price2">
                         Rp
                     </div>
 
-                    <input
-                        type="number"
-                        name="harga"
-                        id="harga"
-                        placeholder="Contoh: 75000"
-                        style="
-                            width:100%;
-                            height:45px;
-                            padding:5px 15px;
-                            background:#1b2838;
-                            border:none;
-                            color:white;
-                            outline:none;
-                        "
-                    >
-                    
+                    <input type="number" name="harga"
+                        id="harga" placeholder="Contoh: 75000"
+                        class="input-price3">
                 </div>
 
-                <p style="
-                    color:#8f98a0;
-                    margin-top:8px;
-                    font-size:13px;
+                <p style="color:#8f98a0; margin-top:8px; font-size:13px;
                 ">
                     Masukkan harga tanpa titik atau koma
                 </p>
@@ -151,14 +96,7 @@
             <div style="margin-bottom:30px;">
                 <label style="color:#c7d5e0; font-weight:bold;">Upload Image</label>
 
-                <div style="
-                    margin-top:10px;
-                    background:#1b2838;
-                    padding:20px;
-                    border:2px dashed #66c0f4;
-                    border-radius:6px;
-                    text-align:center;
-                ">
+                <div class="input-file">
                     <input
                         type="file"
                         name="image1"
@@ -174,38 +112,15 @@
 
             <!-- BUTTON -->
             <div style="display:flex; gap:15px;">
-
-                <button
-                    type="submit"
-                    style="
-                        background:#66c0f4;
-                        color:#0b1b2b;
-                        border:none;
-                        padding:12px 28px;
-                        border-radius:4px;
-                        font-weight:bold;
-                        cursor:pointer;
-                    "
-                >
+                <button type="submit" class="btn-create">
                     CREATE NOW
                 </button>
 
                 <a href="<?= base_url(); ?>"
-                   style="
-                        background:#1b2838;
-                        color:#c7d5e0;
-                        padding:12px 28px;
-                        border-radius:4px;
-                        text-decoration:none;
-                        border:1px solid #3b6e8c;
-                   ">
+                   class="btn-back">
                     BACK
                 </a>
-
             </div>
-
         </form>
-
     </div>
-
 </div>
