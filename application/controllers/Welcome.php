@@ -17,12 +17,12 @@ class Welcome extends CI_Controller {
 			'app_name'      => 'MARKET GAME',
 			'primary'       => '#172120',
 			'secondary'     => '#1b3833',
-			'accent'        => '#66c0f4',
+			'accent'        => '#9ba8b0',
 			'text'          => '#c7d5e0',
 			'text_light'    => '#ffffff',
-			'card'          => '#2a475e',
-			'hover'         => '#3b6e8c',
-			'footer'        => '#171a21'
+			'card'          => '#2a5e48',
+			'hover'         => '#689ab7',
+			'footer'        => '#6b7079'
 		);
 	}
 
@@ -44,7 +44,7 @@ class Welcome extends CI_Controller {
 		} else {
 
 			$data['theme']      = $this->theme;
-			$data['page_title'] = 'Detail Post';
+			$data['page_title'] = 'Detail Game';
 			$data['post']       = $this->model->read($id_game);
 
 			$this->load->view('header', $data);
@@ -233,4 +233,12 @@ class Welcome extends CI_Controller {
 
 		redirect('');
 	}
+
+	public function kelompok(){
+		
+			$this->load->view('header');
+			$this->load->view('kelompok');
+			$this->load->view('footer');
+	}
+
 }

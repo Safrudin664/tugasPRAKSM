@@ -2,31 +2,16 @@
 echo $this->session->flashdata('error');
 ?>
 
-<!-- HERO SECTION -->
-<div style="
-    background:linear-gradient(to right,#0f1923,#1b2838,#22384a);
-    border-radius:8px;
-    padding:35px;
-    margin-bottom:35px;
-    box-shadow:0 0 18px rgba(0,0,0,.35);
-">
-
+<!-- Blok Pengenalan -->
+<div class="intro">
     <div class="row" style="margin-bottom:0;">
 
         <div class="col s12 m7">
-            <h3 style="
-                color:#ffffff;
-                margin-top:0;
-                font-weight:700;
-            ">
+            <h3 class="font-big">
                 MARKET GAME
             </h3>
 
-            <p style="
-                color:#c7d5e0;
-                line-height:1.8;
-                font-size:16px;
-            ">
+            <p>
                 Jelajahi koleksi game terbaik dan termurah di Market Game, tempat terbaik untuk mendapatkan berbagai game populer dengan harga hemat, proses cepat, aman, dan terpercaya untuk semua gamer.
             </p>
         </div>
@@ -47,11 +32,7 @@ echo $this->session->flashdata('error');
 
 
 <!-- SECTION TITLE -->
-<h4 style="
-    color:#ffffff;
-    margin-bottom:25px;
-    font-weight:700;
-">
+<h4 class="font-big">
     Game Populer
 </h4>
 
@@ -63,15 +44,7 @@ echo $this->session->flashdata('error');
 
     <div class="col s12 m6 l4">
 
-        <div style="
-            background:linear-gradient(to bottom,#1b2838,#171a21);
-            border-radius:4px;
-            overflow:hidden;
-            margin-bottom:25px;
-            box-shadow:0 0 15px rgba(0,0,0,.45);
-            transition:.3s;
-            border:1px solid rgba(255,255,255,.05);
-        "
+        <div style="game-card"
         onmouseover="this.style.transform='scale(1.02)'"
         onmouseout="this.style.transform='scale(1)'"
         >
@@ -91,14 +64,24 @@ echo $this->session->flashdata('error');
                     ">
 
                 <!-- DISKON LABEL -->
-                
+                 <?php if ($data['discount'] > 0){?>
+                <div style="
+                    position:absolute;
+                    bottom:10px;
+                    left:10px;
+                    background:#4c6b22;
+                    color:#beee11;
+                    font-weight:bold;
+                    padding:6px 12px;
+                    font-size:20px;
+                ">
+                    -<?= $data['discount']; ?>%
+                </div>
+                <?php }?>
             </div>
 
             <!-- CONTENT -->
-            <div style="
-                padding:16px;
-                background:linear-gradient(to right,#1b2838,#2a475e);
-            ">
+            <div class="game-content">
 
                 <h6 style="
                     color:#ffffff;
@@ -129,8 +112,7 @@ echo $this->session->flashdata('error');
 
                     <div>
                         <?php $harga_normal = $data['harga']?>
-                        <?php if ($data['discount'] > 0)
-                        {?>
+                        <?php if ($data['discount'] > 0){?>
                             <?php 
                                 $diskon = $data['discount'];
                                 $harga_diskon = $harga_normal - (($harga_normal * $diskon) / 100); 

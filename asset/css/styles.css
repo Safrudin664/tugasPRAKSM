@@ -1,0 +1,103 @@
+body{
+        margin:0;
+        background:#1b2838;
+        color:#c7d5e0;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+
+/* NAVBAR */
+nav{
+    background:linear-gradient(to right,#171a21,#1b2838) !important;
+    border-bottom:2px solid #66c0f4;
+    box-shadow:none;
+    }
+
+    .nav-wrapper{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding:0 25px;
+    }
+
+    .brand-logo{
+        position:relative !important;
+        left:0 !important;
+        transform:none !important;
+        font-size:28px !important;
+        font-family:"Lucida Console", "Courier New", monospace;
+        font-weight:700;
+        color:#66c0f4 !important;
+    }
+
+    /* MENU */
+    nav ul{
+        display:flex;
+        align-items:center;
+        gap:8px;
+    }
+
+    nav ul li a{
+        color:#c7d5e0 !important;
+        font-weight:500;
+        padding:0 16px;
+        border-radius:4px;
+        transition:.2s;
+    }
+
+    nav ul li a:hover{
+        background:#2a475e;
+        color:#ffffff !important;
+    }
+
+    /* CONTENT */
+    main.container{
+        width:92%;
+        max-width:1400px;
+        margin-top:30px;
+    }
+
+    /* home.php css */
+    .intro {
+        background:linear-gradient(to right,#0f1923,#1b2838,#22384a);
+        border-radius:8px;
+        padding:35px;
+        margin-bottom:35px;
+        box-shadow:0 0 18px rgba(0,0,0,.35);
+
+    }
+
+    .font-big{
+        color:#ffffff;
+        margin-top:0;
+        margin-bottom:25px;
+        font-weight:700;
+    }
+
+    p{
+        color:#c7d5e0;
+        line-height:1.8;
+        font-size:16px;
+    }
+    
+    .game-card{
+        background:linear-gradient(to bottom,#1b2838,#171a21);
+            border-radius:4px;
+            overflow:hidden;
+            margin-bottom:25px;
+            box-shadow:0 0 15px rgba(0,0,0,.45);
+            transition:.3s;
+            border:1px solid rgba(255,255,255,.05);
+    }
+
+    .game-content{
+        padding:16px;
+        background:linear-gradient(to right,#1b2838,#2a475e);
+    }
+
+    .team-card{
+        padding:16px;
+        background:linear-gradient(to right,#1b2838,#2a475e);
+        border-radius: 24px;
+        padding: 10px;
+        
+    }
