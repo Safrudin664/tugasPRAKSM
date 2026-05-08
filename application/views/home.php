@@ -88,10 +88,7 @@ echo $this->session->flashdata('error');
                         width:100%;
                         height:100%;
                         object-fit:cover;
-                    ">
-
-                <!-- DISKON LABEL -->
-                
+                    ">  
             </div>
 
             <!-- CONTENT -->

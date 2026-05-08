@@ -54,6 +54,24 @@ class Welcome extends CI_Controller {
 	}
 
 	/* ==================================================
+	   SEARCH GAME
+	   ================================================== */
+	public function search()
+{
+    $keyword = $this->input->get('keyword');
+
+    $data['theme']      = $this->theme;
+    $data['page_title'] = 'Hasil Pencarian';
+
+    $this->db->like('nama_game', $keyword);
+    $data['home_post'] = $this->db->get('game')->result();
+
+    $this->load->view('header', $data);
+    $this->load->view('search', $data);
+    $this->load->view('footer', $data);
+}
+
+	/* ==================================================
 	   CREATE POST
 	   ================================================== */
 	public function create()

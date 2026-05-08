@@ -63,6 +63,39 @@
         color:#ffffff !important;
     }
 
+    /* SEARCH */
+    .search-box{
+        display:flex;
+        align-items:center;
+        margin-right:20px;
+    }
+
+    .search-box input{
+        width:220px !important;
+        height:38px !important;
+        background:#316282 !important;
+        border:none !important;
+        outline:none !important;
+        color:white !important;
+        padding:0 12px !important;
+        border-radius:4px 0 0 4px !important;
+        margin:0 !important;
+        box-sizing:border-box;
+    }
+
+    .search-box button{
+        height:38px;
+        border:none;
+        background:#66c0f4;
+        color:white;
+        padding:0 14px;
+        border-radius:0 4px 4px 0;
+        cursor:pointer;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
     /* MOBILE MENU */
     .sidenav{
         background:#171a21;
@@ -80,9 +113,10 @@
     }
     </style>
 
-    </head>
+</head>
 
 <body>
+
     <script src="<?= site_url('asset/js/materialize.min.js'); ?>"></script>
 
     <!-- NAVBAR -->
@@ -95,18 +129,40 @@
                     MARKET GAME
                 </a>
 
-                <!-- DESKTOP MENU -->
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="<?= base_url(); ?>">TOKO</a></li>
-                    <li><a href="#">KELOMPOK</a></li>
-                    <li><a href="<?= site_url('welcome/create'); ?>">CREATE</a></li>
-                </ul>
+                <!-- RIGHT MENU -->
+                <div style="display:flex; align-items:center;">
+
+                    <!-- SEARCH -->
+                    <form 
+                        action="<?= site_url('welcome/search'); ?>" 
+                        method="get"
+                        class="search-box"
+                    >
+
+                        <input 
+                            type="text"
+                            name="keyword"
+                            placeholder="Cari game..."
+                        >
+
+                        <button type="submit">
+                            <i class="material-icons">search</i>
+                        </button>
+
+                    </form>
+
+                    <!-- DESKTOP MENU -->
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="<?= base_url(); ?>">TOKO</a></li>
+                        <li><a href="#">KELOMPOK</a></li>
+                        <li><a href="<?= site_url('welcome/create'); ?>">CREATE</a></li>
+                    </ul>
+
+                </div>
 
             </div>
         </nav>
     </div>
-
-    
 
 <!-- CONTENT -->
 <main class="container">

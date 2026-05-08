@@ -12,10 +12,10 @@
         border-bottom:2px solid #66c0f4;
     ">
         <h4 style="color:#ffffff; margin:0;">
-            CREATE NEW CONTENT
+            CREATE NEW GAME
         </h4>
         <p style="color:#8f98a0; margin-top:8px;">
-            Upload gambar multimedia seperti tampilan Steam Store
+            Upload game ke MARKET GAME
         </p>
     </div>
 
