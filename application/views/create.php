@@ -56,19 +56,38 @@
             <!-- NAME -->
             <div style="margin-bottom:25px;">
                 <label style="color:#c7d5e0; font-weight:bold;">Title</label>
-                <input type="text" class="input-nama" name="nama_game"
+                <input type="text" name="nama_game"
                     id="nama_game" placeholder="Masukkan judul game"
-                    >
+                    style="
+                        width:100%;
+                        height:45px;
+                        padding:5px 12px;
+                        background:#1b2838;
+                        border:1px solid #3b6e8c;
+                        color:white;
+                        border-radius:5px;
+                        margin-top:8px;
+                    ">
             </div>
 
             <!-- DESCRIPTION -->
             <div style="margin-bottom:25px;">
                 <label style="color:#c7d5e0; font-weight:bold;">Description</label>
                 <textarea
-                    name="description" id="description"
+                    name="description" 
+                    id="description"
                     rows="5" 
                     placeholder="Masukkan deskripsi game..."
-                    class="input-desc">
+                    style="
+                        width:100%;
+                        padding:12px 15px;
+                        background:#1b2838;
+                        border:1px solid #3b6e8c;
+                        color:white;
+                        border-radius:5px;
+                        margin-top:8px;
+                        resize:none;
+                    ">
                 </textarea>
             </div>
 
@@ -76,14 +95,34 @@
             <div style="margin-bottom:25px;">
                 <label style="color:#c7d5e0; font-weight:bold;">Harga Game (Rupiah)</label>
 
-                <div class="input-price1">
-                    <div class="input-price2">
+                <div style="
+                    display:flex;
+                    align-items:center;
+                    margin-top:8px;
+                    background:#1b2838;
+                    border:1px solid #3b6e8c;
+                    border-radius:5px;
+                    overflow:hidden;
+                ">
+                    <div style="background:#16202d;
+                        color:#66c0f4;
+                        padding:12px 18px;
+                        font-weight:bold;
+                        border-right:1px solid #3b6e8c;">
                         Rp
                     </div>
 
                     <input type="number" name="harga"
                         id="harga" placeholder="Contoh: 75000"
-                        class="input-price3">
+                        style="
+                            width:100%;
+                            height:45px;
+                            padding:5px 15px;
+                            background:#1b2838;
+                            border:none;
+                            color:white;
+                            outline:none;
+                        ">
                 </div>
 
                 <p style="color:#8f98a0; margin-top:8px; font-size:13px;
