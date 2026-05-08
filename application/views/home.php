@@ -93,7 +93,7 @@ echo $this->session->flashdata('error');
                     <?= $data['nama_game']; ?>
                 </h6>
 
-                <p style="
+                <p class="text-abbr" style="
                     color:#acb2b8;
                     font-size:14px;
                     min-height:45px;

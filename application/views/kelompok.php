@@ -18,16 +18,16 @@
         <div class="row">
           <div class="team-card col s4 m4">
               
-              <h5>Daud</h5>
+              <h5>Daud Muhammmad Firdaus</h5>
               <h6>50422385</h6>
           </div>
           <div class="team-card col s4 m4">
-              <h5>Farrel</h5>
+              <h5>Farrel Apuila</h5>
               <h6>50422385</h6>
           </div>
           <div class="team-card col s4 m4">
               <h5>Safrudin</h5>
-              <h6>50422385</h6>
+              <h6>51422493</h6>
           </div>
         </div>
   </div>

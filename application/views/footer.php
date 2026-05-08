@@ -52,7 +52,7 @@
                         </li>
 
                         <li>
-                            <a href="#"
+                            <a href="<?= site_url('welcome/kelompok'); ?>"
                                style="color:#66c0f4; text-decoration:none;">
                                 Kelompok
                             </a>
@@ -93,39 +93,6 @@
             }
         });
     </script>
-
-    <!-- GLOBAL STYLE -->
-    <style>
-        body{
-            display:flex;
-            min-height:100vh;
-            flex-direction:column;
-            background:#1b2838;
-            color:#c7d5e0;
-        }
-
-        main{
-            flex:1 0 auto;
-        }
-
-        a:hover{
-            opacity:.9;
-            transition:.2s;
-        }
-
-        ::-webkit-scrollbar{
-            width:10px;
-        }
-
-        ::-webkit-scrollbar-track{
-            background:#171a21;
-        }
-
-        ::-webkit-scrollbar-thumb{
-            background:#66c0f4;
-            border-radius:10px;
-        }
-    </style>
-
+        
 </body>
 </html>
